@@ -17,11 +17,13 @@ function handleFileLoad(event) {
     const htmlContent = document.createElement('div')
     htmlContent.innerHTML = stringContent;
 
-    const json = parseHtml(htmlContent);
-    console.log('json:', json);
+    const obj = parseHtmlToObject(htmlContent);
+    const file = objectToFile(obj);
+
+    uploadFile(file);
 }
 
-function parseHtml(htmlContent) {
+function parseHtmlToObject(htmlContent) {
     const TITLE_IDENTIFIER = ["title"]; // classes that identify a title
     const QSTN_IDENTIFIER = ["h1"]; // tags that identify a question
 
@@ -51,10 +53,39 @@ function parseHtml(htmlContent) {
             if (!json?.[currentTitle]?.[currentQstn]) json[currentTitle][currentQstn] = [];
 
             if (!isTitle && !isQstn) {
-                json[currentTitle][currentQstn].push(child);
+                json[currentTitle][currentQstn].push(child.outerHTML);
             }
         }
     }
 
     return json;
+}
+
+function objectToFile(obj) {
+    const jsonString = JSON.stringify(obj);
+
+    const blob = new Blob([jsonString], { type: 'application/json' }); // Create a Blob from the JSON string
+    const file = new File([blob], 'data.json', { type: 'application/json' }); // Create a file from the Blob
+
+    return file;
+}
+
+function uploadFile(file) {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const baseUrl = "https://apis.mngo.in" // "http://localhost:3001";
+    const endPoint = `/api/upload?fileName=yoyo.json&location=${encodeURI('nice/pik')}`;
+
+    fetch(baseUrl + endPoint, {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Upload successful:', data);
+        })
+        .catch(error => {
+            console.error('Upload failed:', error);
+        });
 }
