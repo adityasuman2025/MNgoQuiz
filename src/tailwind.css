@@ -14,13 +14,16 @@
         margin: 0;
         padding: 0;
         color: #d8d8d8;
-        background: linear-gradient(120deg, var(--neon_passion_light), var(--neon_passion_dark));
+        background: linear-gradient(120deg, var(--neon_passion_light), var(--neon_passion_dark)) !important;
         font-family: Arial, Helvetica, sans-serif;
+
+        /* background: var(--neon_passion_light) !important; */
     }
 
     .mngo-light-input {
         background: rgba(255, 255, 255, 0.4) !important;
         color: darkred !important;
+        border: none !important;
     }
 
     .mngo-light-input::placeholder {
