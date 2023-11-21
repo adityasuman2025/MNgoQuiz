@@ -1,10 +1,7 @@
 
-const file = document.getElementById('file');
-file.addEventListener('change', handleFileUpload);
-
-function handleFileUpload(event) {
-    const fileList = event?.target?.files;
-    const file = fileList[0];
+function handleFileUpload(event: React.ChangeEvent<HTMLInputElement>) {
+    const fileList: any = event?.target?.files;
+    const file: File = fileList[0];
     if (file) {
         const reader = new FileReader();
         reader.onload = handleFileLoad;
@@ -12,9 +9,9 @@ function handleFileUpload(event) {
     }
 }
 
-function handleFileLoad(event) {
+function handleFileLoad(event: ProgressEvent<FileReader>) {
     const stringContent = event?.target?.result;
-    const htmlContent = document.createElement('div')
+    const htmlContent: any = document.createElement('div')
     htmlContent.innerHTML = stringContent;
 
     const obj = parseHtmlToObject(htmlContent);
@@ -23,18 +20,18 @@ function handleFileLoad(event) {
     uploadFile(file);
 }
 
-function parseHtmlToObject(htmlContent) {
+function parseHtmlToObject(htmlContent: HTMLElement) {
     const TITLE_IDENTIFIER = ["title"]; // classes that identify a title
     const QSTN_IDENTIFIER = ["h1"]; // tags that identify a question
 
-    function hasClass(classList, classNames) {
+    function hasClass(classList: any, classNames: string[]) {
         return classNames.findIndex(className => classList.contains(className)) > -1;
     }
 
-    const json = {};
+    const json: { [key: string]: any } = {};
 
     let currentTitle, currentQstn;
-    const children = htmlContent.children;
+    const children: any = htmlContent.children;
     for (let i = 0; i < children.length; i++) {
         const child = children[i];
         const classList = child.classList;
@@ -61,7 +58,7 @@ function parseHtmlToObject(htmlContent) {
     return json;
 }
 
-function objectToFile(obj) {
+function objectToFile(obj: { [key: string]: any }) {
     const jsonString = JSON.stringify(obj);
 
     const blob = new Blob([jsonString], { type: 'application/json' }); // Create a Blob from the JSON string
@@ -70,7 +67,7 @@ function objectToFile(obj) {
     return file;
 }
 
-function uploadFile(file) {
+function uploadFile(file: File) {
     const formData = new FormData();
     formData.append('file', file);
 
