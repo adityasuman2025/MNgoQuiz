@@ -13,6 +13,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.mngo-light-input {
+  background: rgba(255, 255, 255, 0.4);
+  color: darkred;
+}
+
+.mngo-light-input::-moz-placeholder {
+  color: #d8d8d8;
+}
+
+.mngo-light-input::placeholder {
+  color: #d8d8d8;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -127,4 +140,8 @@ body {
 
 .mngo :is(.mngo-justify-center) {
   justify-content: center;
+}
+
+.mngo :is(.mngo-border-none) {
+  border-style: none;
 }
