@@ -1,21 +1,33 @@
-import { memo } from "react";
+import { memo, Suspense, lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Admin from './pages/admin'
+import { FullScreenLoader } from "./comps";
+
+//lazy loading split the main bundle into many chunks
+const AdminLogin = lazy(() => import('./pages/AdminLogin'));
+const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
 function Routes() {
     const router = createBrowserRouter([
         {
             path: "/admin",
-            element: <Admin />,
+            element: <AdminLogin />,
+        },
+        {
+            path: "/admin-dashboard",
+            element: <AdminDashboard />,
         },
 
         {
             path: "*",
-            element: <Admin />,
+            element: <AdminLogin />,
         }
     ]);
 
-    return <RouterProvider router={router} />;
+    return (
+        <Suspense fallback={<FullScreenLoader />}>
+            <RouterProvider router={router} />;
+        </Suspense>
+    )
 }
 
 export default memo(Routes);

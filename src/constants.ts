@@ -10,7 +10,7 @@ export const API_USERS_REF = "/api/users";
 
 //general variables
 export const PROJECT_NAME = "MNgo Quiz";
-export const LOGGED_USER_TOKEN_COOKIE_NAME = "MNgoQuizLoggenUserToken";
+export const LOGGED_USER_TOKEN_COOKIE_NAME = "MNgoQuizLoggedUserToken";
 export const STANDARD_DATE_FORMAT = "DD-MM-YYYY";
 export const DEFAULT_DATE = "1999-03-03T";
 export const ALLOWED_IMAGE_TYPES = ["image/png", "image/jpeg"];

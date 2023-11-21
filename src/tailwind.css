@@ -19,11 +19,15 @@
     }
 
     .mngo-light-input {
-        background: rgba(255, 255, 255, 0.4);
-        color: darkred;
+        background: rgba(255, 255, 255, 0.4) !important;
+        color: darkred !important;
     }
 
     .mngo-light-input::placeholder {
-        color: #d8d8d8;
+        color: #d8d8d8 !important;
+    }
+
+    .mngo-loader {
+        border-color: #d8d8d8 var(--burning_sky_dark) #d8d8d8;
     }
 }
