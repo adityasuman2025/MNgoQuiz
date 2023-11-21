@@ -9,7 +9,7 @@
         "build": "npx tailwindcss -i ./src/tailwind.css -c ./tailwind.config.cjs -o ./src/index.css --minify && tsc && vite build"
     },
     "dependencies": {
-        "mngo-project-tools": "1.2.80",
+        "mngo-project-tools": "1.2.84",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-router-dom": "6.19.0"
