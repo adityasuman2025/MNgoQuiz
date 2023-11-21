@@ -8,6 +8,9 @@ export const COOKIE_EXPIRATION_TIME = COOKIE_EXPIRATION_TYM;
 export const API_BASE_URL = "https://apis.mngo.in";
 export const API_USERS_REF = "/api/users";
 
+export const QUIZ_JSON_FILE_LOCATION = "quiz";
+export const QUIZ_JSON_FILE_NAME = "quiz.json";
+
 //general variables
 export const PROJECT_NAME = "MNgo Quiz";
 export const LOGGED_USER_TOKEN_COOKIE_NAME = "MNgoQuizLoggedUserToken";

@@ -7,11 +7,11 @@ import { verifyAdmin } from "../apis";
 import { PROJECT_NAME, LOGGED_USER_TOKEN_COOKIE_NAME, COOKIE_EXPIRATION_TIME } from "../constants";
 
 function AdminLogin() {
-    const [displayLoader, setDisplayLoader] = useState(false);
+    const [showLoader, setShowLoader] = useState(false);
     const [snackBarData, setSnackBarData] = useState<{ [key: string]: any }>({ visisible: false, msg: "", type: "" });
 
     async function handleLoginClick(username: string, password: string) {
-        setDisplayLoader(true);
+        setShowLoader(true);
         try {
             const { data: { userToken = "" } = {} } = await verifyAdmin(username, password) || {};
 
@@ -24,15 +24,11 @@ function AdminLogin() {
         } catch (e: any) {
             makeSnackBar(e.message);
         }
-        setDisplayLoader(false);
+        setShowLoader(false);
     }
 
     function makeSnackBar(msg: string, type: string = "error") {
         setSnackBarData({ visisible: true, msg, type });
-    }
-
-    function handleSnackBarClose() {
-        setSnackBarData({ visisible: false });
     }
 
     return (
@@ -40,7 +36,7 @@ function AdminLogin() {
             <LoginForm
                 styles={{ inputClassName: "mngo-light-input" }}
                 projectTitle={PROJECT_NAME}
-                isLoggingUser={displayLoader}
+                isLoggingUser={showLoader}
                 showError={(error: string) => { makeSnackBar(error) }}
                 onLoginClick={handleLoginClick}
             />
@@ -49,7 +45,7 @@ function AdminLogin() {
                 open={snackBarData.visisible}
                 msg={snackBarData.msg}
                 type={snackBarData.type}
-                onClose={handleSnackBarClose}
+                onClose={() => setSnackBarData({ visisible: false })}
             />
         </div>
     )
