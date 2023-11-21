@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --neon_passion_light: #d4224f;
+        --neon_passion_dark: #91186b;
+        --burning_sky_light: #d04701;
+        --burning_sky_dark: #a40b0b;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        color: #d8d8d8;
+        background: linear-gradient(120deg, var(--neon_passion_light), var(--neon_passion_dark));
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
