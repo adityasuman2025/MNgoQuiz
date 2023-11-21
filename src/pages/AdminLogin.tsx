@@ -1,9 +1,9 @@
 import { useState } from "react";
+import WithoutAuth from "mngo-project-tools/hocs/WithoutAuth";
 import LoginForm from "mngo-project-tools/comps/LoginForm";
 import SnackBar from "mngo-project-tools/comps/SnackBar";
 import { makeCookie } from "mngo-project-tools/utils";
 import { verifyAdmin } from "../apis";
-import { WithoutAuth } from "../hocs";
 import { PROJECT_NAME, LOGGED_USER_TOKEN_COOKIE_NAME, COOKIE_EXPIRATION_TIME } from "../constants";
 
 function AdminLogin() {
@@ -16,11 +16,8 @@ function AdminLogin() {
             const { data: { userToken = "" } = {} } = await verifyAdmin(username, password) || {};
 
             if (userToken) {
-                if (makeCookie(LOGGED_USER_TOKEN_COOKIE_NAME, userToken, COOKIE_EXPIRATION_TIME)) {
-                    return redirectToAdminDashboard();
-                } else {
-                    makeSnackBar("Something went wrong");
-                }
+                makeCookie(LOGGED_USER_TOKEN_COOKIE_NAME, userToken, COOKIE_EXPIRATION_TIME)
+                return redirectToAdminDashboard();
             } else {
                 makeSnackBar("Something went wrong");
             }

@@ -140,6 +140,10 @@ body {
   height: 100vh;
 }
 
+.mngo :is(.mngo-flex-col) {
+  flex-direction: column;
+}
+
 .mngo :is(.mngo-items-center) {
   align-items: center;
 }

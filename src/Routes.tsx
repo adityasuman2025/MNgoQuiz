@@ -1,6 +1,6 @@
 import { memo, Suspense, lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { FullScreenLoader } from "./comps";
+import FullScreenLoader from "mngo-project-tools/comps/FullScreenLoader";
 
 //lazy loading split the main bundle into many chunks
 const AdminLogin = lazy(() => import('./pages/AdminLogin'));
