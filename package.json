@@ -9,19 +9,19 @@
         "build": "npx tailwindcss -i ./src/tailwind.css -c ./tailwind.config.cjs -o ./src/index.css --minify && tsc && vite build"
     },
     "dependencies": {
-        "mngo-project-tools": "^1.2.76",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-router-dom": "^6.19.0"
+        "mngo-project-tools": "1.2.77",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-router-dom": "6.19.0"
     },
     "devDependencies": {
-        "@types/react": "^18.2.37",
-        "@types/react-dom": "^18.2.15",
-        "@vitejs/plugin-react": "^4.2.0",
-        "concurrently": "^8.2.2",
-        "postcss": "^8.4.31",
-        "tailwindcss": "^3.3.5",
-        "typescript": "^5.2.2",
-        "vite": "^5.0.0"
+        "@types/react": "18.2.37",
+        "@types/react-dom": "18.2.15",
+        "@vitejs/plugin-react": "4.2.0",
+        "concurrently": "8.2.2",
+        "postcss": "8.4.31",
+        "tailwindcss": "3.3.5",
+        "typescript": "5.2.2",
+        "vite": "5.0.0"
     }
 }
