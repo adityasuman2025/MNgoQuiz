@@ -3,7 +3,7 @@ import Routes from './Routes';
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-    <div className="mngo">
+    <main className="mngo">
         <Routes />
-    </div>
+    </main>
 )

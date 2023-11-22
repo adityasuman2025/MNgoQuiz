@@ -18,7 +18,7 @@ export default function LoaderOrError({
             {
                 (loading) ? (
                     loaderRenderer
-                ) : error ? (
+                ) : (error) ? (
                     errorRenderer
                 ) : children
             }

@@ -47,7 +47,7 @@ function AdminDashboard() {
     }
 
     return (
-        <div className='mngo-h-screen mngo-flex mngo-flex-col mngo-items-center mngo-justify-center'>
+        <section className='mngo-h-screen mngo-flex mngo-flex-col mngo-items-center mngo-justify-center'>
             Upload Web Tech Doc HTML File
             <FileInput
                 accept=".html"
@@ -64,7 +64,7 @@ function AdminDashboard() {
                 type={snackBarData.type}
                 onClose={() => setSnackBarData({ visisible: false })}
             />
-        </div>
+        </section>
     )
 }
 

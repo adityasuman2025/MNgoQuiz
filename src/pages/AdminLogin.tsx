@@ -32,7 +32,7 @@ function AdminLogin() {
     }
 
     return (
-        <div className='mngo-h-screen mngo-flex mngo-items-center mngo-justify-center'>
+        <section className='mngo-h-screen mngo-flex mngo-items-center mngo-justify-center'>
             <LoginForm
                 styles={{ inputClassName: "mngo-light-input" }}
                 projectTitle={PROJECT_NAME}
@@ -47,7 +47,7 @@ function AdminLogin() {
                 type={snackBarData.type}
                 onClose={() => setSnackBarData({ visisible: false })}
             />
-        </div>
+        </section>
     )
 }
 
