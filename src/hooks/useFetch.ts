@@ -8,15 +8,15 @@ export default function useFetch({
     urls: { url: string }[],
     respTransformer?: (params: { respData: any, rqstData: any }, idx: number) => any,
 }) {
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string>("");
     const [data, setData] = useState<any[]>([]);
 
     useEffect(() => {
         if (!urls || !urls.length) return setIsLoading(false);
 
         setIsLoading(true);
-        const apiCallPromises = (urls || []).map(item => sendRequestToAPI(item.url));
+        const apiCallPromises = (urls || []).map(item => sendRequestToAPI(item.url, ""));
         Promise.all(apiCallPromises)
             .then(resp => {
                 const transformedResp: any[] = [];

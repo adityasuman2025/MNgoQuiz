@@ -20,6 +20,24 @@
         /* background: var(--neon_passion_light) !important; */
     }
 
+    h1,
+    h2,
+    h3,
+    p,
+    header,
+    button,
+    footer,
+    main,
+    ul,
+    li,
+    section {
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        list-style: none;
+    }
+
     .mngo-light-input {
         background: rgba(255, 255, 255, 0.4) !important;
         color: darkred !important;

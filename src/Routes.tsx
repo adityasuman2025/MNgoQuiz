@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import FullScreenLoader from "mngo-project-tools/comps/FullScreenLoader";
 
 //lazy loading split the main bundle into many chunks
+const Home = lazy(() => import('./pages/Home'));
 const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
@@ -16,10 +17,9 @@ function Routes() {
             path: "/admin-dashboard",
             element: <AdminDashboard />,
         },
-
         {
             path: "*",
-            element: <AdminLogin />,
+            element: <Home />,
         }
     ]);
 
