@@ -44,3 +44,16 @@ export function objectToFile(obj: { [key: string]: any }) {
 
     return file;
 }
+
+export function shuffle(array: any[]) {
+    let currentIndex = array.length, randomIndex;
+
+    while (currentIndex > 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex); // Pick a remaining element.
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]; // swapping
+    }
+
+    return array;
+}

@@ -19,9 +19,9 @@ function Home({
                 <figcaption className="mngo-text-center"><h1>{PROJECT_NAME}</h1></figcaption>
             </figure>
 
-            <h4>practice interview questions</h4>
+            <p>practice interview questions</p>
 
-            <ul className="mngo-my-8 mngo-mx-auto mngo-w-10/12 sm:mngo-w-1/2">
+            <ul className="mngo-my-8 mngo-mx-auto mngo-w-10/12 sm:mngo-w-1/2 mngo-list-none">
                 {
                     Object.keys(quizData).map((key: string, idx) => (
                         <QuizListItem
