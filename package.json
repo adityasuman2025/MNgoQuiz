@@ -5,7 +5,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "start": "concurrently \"npx tailwindcss -i ./src/tailwind.css -c ./tailwind.config.cjs -o ./src/index.css --watch\" \"vite\" ",
+        "start": "concurrently \"npx tailwindcss -i ./src/tailwind.css -c ./tailwind.config.cjs -o ./src/index.css --watch\" \"vite\"",
         "build": "npx tailwindcss -i ./src/tailwind.css -c ./tailwind.config.cjs -o ./src/index.css --minify && tsc && vite build"
     },
     "dependencies": {

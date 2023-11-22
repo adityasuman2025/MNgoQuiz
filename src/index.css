@@ -294,13 +294,18 @@ h1,
   padding: 0.5rem;
 }
 
-.mngo :is(.mngo-p-4) {
-  padding: 1rem;
+.mngo :is(.mngo-p-3) {
+  padding: 0.75rem;
 }
 
-.mngo :is(.mngo-py-5) {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+.mngo :is(.mngo-py-3) {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.mngo :is(.mngo-py-3\.5) {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
 }
 
 .mngo :is(.mngo-text-left) {
@@ -316,11 +321,6 @@ h1,
   line-height: 2rem;
 }
 
-.mngo :is(.mngo-text-5xl) {
-  font-size: 3rem;
-  line-height: 1;
-}
-
 .mngo :is(.mngo-text-lg) {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -329,6 +329,11 @@ h1,
 .mngo :is(.mngo-text-sm) {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.mngo :is(.mngo-text-xl) {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .mngo :is(.mngo-text-white) {
@@ -376,5 +381,26 @@ h1,
 @media (min-width: 640px) {
   .mngo :is(.sm\:mngo-w-1\/2) {
     width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .mngo :is(.md\:mngo-p-4) {
+    padding: 1rem;
+  }
+
+  .mngo :is(.md\:mngo-py-5) {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .mngo :is(.md\:mngo-text-2xl) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .mngo :is(.md\:mngo-text-5xl) {
+    font-size: 3rem;
+    line-height: 1;
   }
 }

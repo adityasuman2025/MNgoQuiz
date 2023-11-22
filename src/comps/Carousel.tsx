@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import leftArrow from '../imgs/leftArrow.svg';
 import rightArrow from '../imgs/rightArrow.svg';
 
-const ICON_DIMN = 80;
-
 export default function Carousel({
     disableLeft = false,
     disableRight = false,
@@ -17,6 +15,13 @@ export default function Carousel({
     onRightClick?: () => void,
     children: React.ReactNode
 }) {
+    const [iconDimn, setIconDimn] = useState<number>(80);
+
+    useEffect(() => {
+        const width = window.innerWidth;
+        if (width < 768) setIconDimn(40);
+    }, []);
+
     return (
         <section className='mngo-h-full mngo-flex mngo-items-center mngo-justify-between mngo-w-10/12 mngo-m-auto'>
             <img src={leftArrow} alt="left arrow"
@@ -24,7 +29,7 @@ export default function Carousel({
                     mngo-cursor-pointer mngo-transition mngo-duration-300 hover:-mngo-translate-x-4
                     ${disableLeft ? "mngo-opacity-50 mngo-pointer-events-none" : ""}
                 `}
-                width={ICON_DIMN} height={ICON_DIMN}
+                width={iconDimn} height={iconDimn}
                 onClick={onLeftClick}
             />
 
@@ -35,7 +40,7 @@ export default function Carousel({
                     mngo-cursor-pointer mngo-transition mngo-duration-300 hover:mngo-translate-x-4
                     ${disableRight ? "mngo-opacity-50 mngo-pointer-events-none" : ""}
                 `}
-                width={ICON_DIMN} height={ICON_DIMN}
+                width={iconDimn} height={iconDimn}
                 onClick={onRightClick}
             />
         </section>

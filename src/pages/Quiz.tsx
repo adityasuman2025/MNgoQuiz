@@ -51,10 +51,10 @@ function Quiz({
                 (quizQuestions.length > 0) ? (
                     <>
                         <header
-                            className="mngo-fixed mngo-top-0 mngo-left-0 mngo-w-full mngo-text-center mngo-drop-shadow-lg mngo-py-5 mngo-z-10"
+                            className="mngo-fixed mngo-top-0 mngo-left-0 mngo-w-full mngo-text-center mngo-drop-shadow-lg md:mngo-py-5 mngo-py-3.5 mngo-z-10"
                             style={{ background: "linear-gradient(120deg, var(--neon_passion_light), var(--neon_passion_dark))" }}
                         >
-                            <h1>{quizName}</h1>
+                            <h1 className=" md:mngo-text-2xl mngo-text-lg">{quizName}</h1>
                         </header>
 
                         <Carousel
@@ -70,7 +70,7 @@ function Quiz({
                             }}
                         >
                             <div className="mngo-h-full mngo-flex mngo-flex-col mngo-justify-center mngo-relative">
-                                <p className="mngo-text-light mngo-text-5xl mngo-mb-4">{quizQuestions[currentQuestionIdx]}</p>
+                                <p className="mngo-text-light md:mngo-text-5xl mngo-text-xl mngo-mb-4">{quizQuestions[currentQuestionIdx]}</p>
 
                                 <div className="mngo-absolute mngo-left-0 mngo-bottom-10 mngo-w-full mngo-text-center">
                                     <p>{currentQuestionIdx + 1}/{quizQuestions.length}</p>
