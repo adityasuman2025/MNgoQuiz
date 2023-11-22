@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import FullScreenLoader from "mngo-project-tools/comps/FullScreenLoader";
 import BottomModal from "mngo-project-tools/comps/BottomModal";
 import WithData from "mngo-project-tools/hocs/WithData";
-import { Carousel } from "../comps";
+import { QuizHeader, Carousel } from "../comps";
 import { API_BASE_URL, API_FILE_REF } from '../constants';
 import { shuffle } from '../utils';
 import "../quiz.css";
@@ -51,12 +51,7 @@ function Quiz({
             {
                 (quizQuestions.length > 0) ? (
                     <>
-                        <header
-                            className="mngo-fixed mngo-top-0 mngo-left-0 mngo-w-full mngo-text-center mngo-drop-shadow-lg md:mngo-py-5 mngo-py-3.5 mngo-z-10"
-                            style={{ background: "linear-gradient(120deg, var(--neon_passion_light), var(--neon_passion_dark))" }}
-                        >
-                            <h1 className=" md:mngo-text-xl mngo-text-lg">{quizName}</h1>
-                        </header>
+                        <QuizHeader title={quizName} />
 
                         <Carousel
                             disableLeft={currentQuestionIdx === 0}

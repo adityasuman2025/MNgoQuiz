@@ -57,3 +57,13 @@ export function shuffle(array: any[]) {
 
     return array;
 }
+
+export function secondsToMMSS(seconds: number) {
+    let minutes: number | string = Math.floor(seconds / 60);
+    let remainingSeconds: number | string = seconds % 60;
+
+    if (minutes < 10) minutes = "0" + String(minutes);
+    if (remainingSeconds < 10) remainingSeconds = "0" + String(remainingSeconds);
+
+    return `${minutes}:${remainingSeconds}`;
+}
