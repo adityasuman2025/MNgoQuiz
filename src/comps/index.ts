@@ -1,3 +1,3 @@
-import LoaderOrError from './LoaderOrError';
+import QuizListItem from './QuizListItem';
 
-export { LoaderOrError };
+export { QuizListItem };

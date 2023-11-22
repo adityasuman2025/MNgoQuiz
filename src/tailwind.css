@@ -23,6 +23,7 @@
     h1,
     h2,
     h3,
+    h4,
     p,
     header,
     button,
@@ -30,6 +31,8 @@
     main,
     ul,
     li,
+    figure,
+    figCaption,
     section {
         margin: 0;
         padding: 0;
@@ -50,5 +53,14 @@
 
     .mngo-loader {
         border-color: #d8d8d8 var(--burning_sky_dark) #d8d8d8;
+    }
+
+    .mngo-quiz-icon {
+        filter: invert(100%) sepia(0%) saturate(4848%) hue-rotate(33deg) brightness(115%) contrast(69%);
+    }
+
+    .mngo-quiz-card {
+        background: rgba(255, 255, 255, 0.5);
+        /* color: var(--burning_sky_dark); */
     }
 }
