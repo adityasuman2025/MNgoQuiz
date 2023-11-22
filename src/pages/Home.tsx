@@ -13,7 +13,7 @@ function Home({
     const quizData = data?.[0] || {};
 
     return (
-        <section className='mngo-h-screen mngo-overflow-auto mngo-flex mngo-flex-col mngo-items-center'>
+        <section className='mngo-h-screen mngo-overflow-auto mngo-text-center mngo-m-auto'>
             <figure className="mngo-mt-10 mngo-mb-1">
                 <img src={getLogoImg()} alt="mngo logo" width={200} height={200} />
                 <figcaption className="mngo-text-center"><h1>{PROJECT_NAME}</h1></figcaption>
@@ -21,12 +21,15 @@ function Home({
 
             <h4>practice interview questions</h4>
 
-            <ul className="mngo-my-8">
+            <ul className="mngo-my-8 mngo-mx-auto mngo-w-60 sm:mngo-w-1/2">
                 {
                     Object.keys(quizData).map((key: string, idx) => (
                         <QuizListItem
                             key={key + "_" + idx}
                             quizTitle={key}
+                            onClick={() => {
+                                window.location.href = `/quiz/${key}`;
+                            }}
                         />
                     ))
                 }
