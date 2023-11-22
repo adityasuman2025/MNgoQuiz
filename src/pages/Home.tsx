@@ -21,7 +21,7 @@ function Home({
 
             <h4>practice interview questions</h4>
 
-            <ul className="mngo-my-8 mngo-mx-auto mngo-w-60 sm:mngo-w-1/2">
+            <ul className="mngo-my-8 mngo-mx-auto mngo-w-10/12 sm:mngo-w-1/2">
                 {
                     Object.keys(quizData).map((key: string, idx) => (
                         <QuizListItem

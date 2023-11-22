@@ -39,6 +39,7 @@
         border: none;
         background: none;
         list-style: none;
+        list-style-type: none;
     }
 
     .mngo-light-input {
