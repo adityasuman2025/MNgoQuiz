@@ -403,4 +403,14 @@ h1,
     font-size: 3rem;
     line-height: 1;
   }
+
+  .mngo :is(.md\:mngo-text-xl) {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .mngo :is(.md\:mngo-text-4xl) {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }

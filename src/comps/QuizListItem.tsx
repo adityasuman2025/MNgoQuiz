@@ -18,7 +18,7 @@ export default function QuizListItem({
                 <img src={quizIcon} alt="quiz" className='mngo-quiz-icon' width={50} height={50} />
             </figure>
             <div className='mngo-flex-1 mngo-ml-4 mngo-text-left mngo-text-white'>
-                <h3 className=''>{quizTitle}</h3>
+                <h3>{quizTitle}</h3>
                 <p className='mngo-text-sm'>{quizDescription}</p>
             </div>
         </li>
