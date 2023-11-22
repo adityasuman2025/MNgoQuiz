@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { secondsToMMSS } from '../utils';
 import TimerIcon from '../imgs/timer.svg';
 
@@ -7,6 +7,10 @@ export default function Timer() {
 
     const [timer, setTimer] = useState(0);
     const [isTimerRunning, setIsTimerRunning] = useState(false);
+
+    useEffect(() => {
+        return () => clearInterval(timerRef.current);
+    }, []);
 
     function handleTimerClick() {
         if (isTimerRunning) clearInterval(timerRef.current); // pause timer
