@@ -150,6 +150,10 @@ h1,
   --tw-backdrop-sepia:  ;
 }
 
+.mngo :is(.mngo-mt-4) {
+  margin-top: 1rem;
+}
+
 .mngo :is(.mngo-flex) {
   display: flex;
 }
@@ -172,9 +176,4 @@ h1,
 
 .mngo :is(.mngo-text-center) {
   text-align: center;
-}
-
-.mngo :is(.mngo-text-2xl) {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }

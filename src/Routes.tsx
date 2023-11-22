@@ -25,7 +25,7 @@ function Routes() {
 
     return (
         <Suspense fallback={<FullScreenLoader styles={{ loaderClassName: "mngo-loader" }} />}>
-            <RouterProvider router={router} />;
+            <RouterProvider router={router} />
         </Suspense>
     )
 }

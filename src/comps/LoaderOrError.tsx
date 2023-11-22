@@ -1,14 +1,14 @@
 import LoadingAnimation from "mngo-project-tools/comps/LoadingAnimation";
 
 export default function LoaderOrError({
-    loading,
-    error,
+    isLoading,
+    hasError,
     loaderRenderer = <LoadingAnimation loading />,
-    errorRenderer = <p className={""}>{error}</p>,
+    errorRenderer = <p>something went wrong</p>,
     children
 }: {
-    loading: boolean,
-    error: string,
+    isLoading: boolean,
+    hasError?: boolean,
     loaderRenderer?: any,
     errorRenderer?: any,
     children: any
@@ -16,9 +16,9 @@ export default function LoaderOrError({
     return (
         <>
             {
-                (loading) ? (
+                (isLoading) ? (
                     loaderRenderer
-                ) : (error) ? (
+                ) : (hasError) ? (
                     errorRenderer
                 ) : children
             }
