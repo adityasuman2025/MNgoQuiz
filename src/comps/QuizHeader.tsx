@@ -9,8 +9,7 @@ export default function QuizHeader({
 }) {
     return (
         <header
-            className="mngo-fixed mngo-top-0 mngo-w-full mngo-text-center mngo-drop-shadow-lg mngo-py-2.5 mngo-z-10 mngo-flex mngo-items-center mngo-justify-between"
-            style={{ background: "linear-gradient(120deg, var(--neon_passion_light), var(--neon_passion_dark))" }}
+            className="mngo-quiz-background mngo-fixed mngo-top-0 mngo-w-full mngo-text-center mngo-drop-shadow-lg mngo-py-2.5 mngo-z-10 mngo-flex mngo-items-center mngo-justify-between"
         >
             <p className="mngo-flex mngo-items-center mngo-w-1/3 mngo-ml-3">
                 <img src={getLogoImg()} alt="mngo logo" width={30} height={30} />
