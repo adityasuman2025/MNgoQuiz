@@ -5,11 +5,11 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "start": "concurrently \"npx tailwindcss -i ./src/tailwind.css -c ./tailwind.config.cjs -o ./src/index.css --watch\" \"vite\"",
+        "start": "concurrently \"npx tailwindcss -i ./src/tailwind.css -c ./tailwind.config.cjs -o ./src/index.css --watch\" \"vite --host\"",
         "build": "npx tailwindcss -i ./src/tailwind.css -c ./tailwind.config.cjs -o ./src/index.css --minify && tsc && vite build"
     },
     "dependencies": {
-        "mngo-project-tools": "1.2.90",
+        "mngo-project-tools": "1.2.96",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-router-dom": "6.19.0"

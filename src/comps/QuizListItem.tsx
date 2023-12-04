@@ -15,10 +15,10 @@ export default function QuizListItem({
             onClick={onClick}
         >
             <figure>
-                <img src={quizIcon} alt="quiz" className='mngo-quiz-icon' width={50} height={50} />
+                <img src={quizIcon} alt="quiz" className='mngo-quiz-icon' width={45} height={45} />
             </figure>
             <div className='mngo-flex-1 mngo-ml-4 mngo-text-left mngo-text-white'>
-                <h3>{quizTitle}</h3>
+                <h4>{quizTitle}</h4>
                 <p className='mngo-text-sm'>{quizDescription}</p>
             </div>
         </li>

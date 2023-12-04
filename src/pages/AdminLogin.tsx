@@ -39,6 +39,7 @@ function AdminLogin() {
                 isLoggingUser={showLoader}
                 showError={(error: string) => { makeSnackBar(error) }}
                 onLoginClick={handleLoginClick}
+                hideSignUpBtn={true}
             />
 
             <SnackBar

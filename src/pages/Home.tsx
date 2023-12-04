@@ -15,7 +15,7 @@ function Home({
     return (
         <section className='mngo-h-screen mngo-overflow-auto mngo-text-center mngo-m-auto'>
             <figure className="mngo-mt-10 mngo-mb-1">
-                <img src={getLogoImg()} alt="mngo logo" width={200} height={200} />
+                <img src={getLogoImg()} alt="mngo logo" width={250} height={250} />
                 <figcaption className="mngo-text-center"><h1>{PROJECT_NAME}</h1></figcaption>
             </figure>
 
