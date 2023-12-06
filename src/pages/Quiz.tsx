@@ -6,7 +6,6 @@ import WithData from "mngo-project-tools/hocs/WithData";
 import { QuizHeader, Carousel } from "../comps";
 import { API_BASE_URL, API_FILE_REF } from '../constants';
 import { shuffle } from '../utils';
-import "../quiz.css";
 
 function Quiz({
     data = {},
