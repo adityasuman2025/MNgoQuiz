@@ -34,6 +34,11 @@ function Home({
                     ))
                 }
             </ul>
+
+            <footer className="mngo-text-xs mngo-py-4">
+                <small>© 2023 MNgo Quiz</small>
+                <p>Developed by <a className="mngo-footer-developer" href="https://adityasuman.mngo.in" target="_blank">Aditya Suman</a></p>
+            </footer>
         </section>
     )
 }
