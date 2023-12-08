@@ -71,6 +71,10 @@ h1,
   /* color: var(--burning_sky_dark); */
 }
 
+.mngo-solution ul {
+  margin-left: 30px;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -485,6 +489,10 @@ h1,
 
   .mngo :is(.md\:mngo-p-4) {
     padding: 1rem;
+  }
+
+  .mngo :is(.md\:mngo-p-3) {
+    padding: 0.75rem;
   }
 
   .mngo :is(.md\:mngo-text-center) {

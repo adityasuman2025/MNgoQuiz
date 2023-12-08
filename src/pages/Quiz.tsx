@@ -89,7 +89,7 @@ function Quiz({
             {
                 isSolutionVisible ?
                     <BottomModal title="Solution" onCloseClick={() => setIsSolutionVisible(false)}>
-                        <div className="" dangerouslySetInnerHTML={{ __html: solution }} />
+                        <div className="mngo-text-sm mngo-solution" dangerouslySetInnerHTML={{ __html: solution }} />
                     </BottomModal>
                     : null
             }
