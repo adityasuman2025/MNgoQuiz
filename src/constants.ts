@@ -13,6 +13,8 @@ export const API_FILE_REF = "/api/get-file";
 export const QUIZ_JSON_FILE_LOCATION = "quiz";
 export const QUIZ_JSON_FILE_NAME = "quiz.json";
 
+export const MACHINE_CODING_FILE_LOCATION = "https://machine-coding.mngo.in";
+
 //general variables
 export const PROJECT_NAME = "MNgo Quiz";
 export const LOGGED_USER_TOKEN_COOKIE_NAME = "MNgoQuizLoggedUserToken";

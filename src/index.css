@@ -71,6 +71,11 @@ h1,
   /* color: var(--burning_sky_dark); */
 }
 
+.mngo-question a,
+    .mngo-question a:visited {
+  color: #d8d8d8;
+}
+
 .mngo-solution ul {
   margin-left: 30px;
 }
@@ -200,8 +205,8 @@ h1,
   position: relative;
 }
 
-.mngo :is(.mngo-bottom-10) {
-  bottom: 2.5rem;
+.mngo :is(.mngo-bottom-2) {
+  bottom: 0.5rem;
 }
 
 .mngo :is(.mngo-left-0) {
@@ -232,10 +237,6 @@ h1,
 
 .mngo :is(.mngo-mb-1) {
   margin-bottom: 0.25rem;
-}
-
-.mngo :is(.mngo-mb-4) {
-  margin-bottom: 1rem;
 }
 
 .mngo :is(.mngo-ml-1) {
@@ -294,8 +295,17 @@ h1,
   width: 83.333333%;
 }
 
+.mngo :is(.mngo-w-11\/12) {
+  width: 91.666667%;
+}
+
 .mngo :is(.mngo-w-2\/3) {
   width: 66.666667%;
+}
+
+.mngo :is(.mngo-w-fit) {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .mngo :is(.mngo-w-full) {
@@ -348,6 +358,10 @@ h1,
 
 .mngo :is(.mngo-rounded-lg) {
   border-radius: 0.5rem;
+}
+
+.mngo :is(.mngo-border-none) {
+  border-style: none;
 }
 
 .mngo :is(.mngo-bg-white) {
@@ -442,6 +456,10 @@ h1,
 .mngo :is(.mngo-text-white) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.mngo :is(.mngo-no-underline) {
+  text-decoration-line: none;
 }
 
 .mngo :is(.mngo-opacity-50) {

@@ -11,9 +11,11 @@ export default function QuizHeader({
         <header
             className="mngo-quiz-background mngo-fixed mngo-top-0 mngo-w-full mngo-text-center mngo-drop-shadow-lg mngo-py-2.5 mngo-z-10 mngo-flex mngo-items-center mngo-justify-between"
         >
-            <p className="mngo-flex mngo-items-center mngo-w-1/3 mngo-ml-3">
-                <img src={getLogoImgXxs()} alt="mngo logo" width={30} height={30} />
-                <p className="md:mngo-ml-2 mngo-ml-1 mngo-font-bold">{PROJECT_NAME}</p>
+            <p className="mngo-w-1/3 mngo-ml-3">
+                <a href="/" className="mngo-flex mngo-items-center mngo-no-underline mngo-w-fit mngo-text-white">
+                    <img src={getLogoImgXxs()} alt="mngo logo" width={30} height={30} />
+                    <p className="md:mngo-ml-2 mngo-ml-1 mngo-font-bold">{PROJECT_NAME}</p>
+                </a>
             </p>
 
             <h1 className="md:mngo-text-xl mngo-text-lg md:mngo-w-1/3 mngo-w-2/3 mngo-text-right md:mngo-text-center mngo-mr-3">{title}</h1>

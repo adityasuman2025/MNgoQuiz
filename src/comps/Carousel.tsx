@@ -23,7 +23,7 @@ export default function Carousel({
     }, []);
 
     return (
-        <section className='mngo-h-full mngo-flex mngo-items-center mngo-justify-between mngo-w-10/12 mngo-m-auto'>
+        <section className='mngo-h-full mngo-flex mngo-items-center mngo-justify-between mngo-w-11/12 mngo-m-auto'>
             <img src={leftArrow} alt="left arrow"
                 className={`
                     mngo-cursor-pointer mngo-transition mngo-duration-300 hover:-mngo-translate-x-4
