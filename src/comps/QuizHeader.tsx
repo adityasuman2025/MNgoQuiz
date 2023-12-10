@@ -14,7 +14,7 @@ export default function QuizHeader({
             <p className="mngo-w-1/3 mngo-ml-3">
                 <a href="/" className="mngo-flex mngo-items-center mngo-no-underline mngo-w-fit mngo-text-white">
                     <img src={getLogoImgXxs()} alt="mngo logo" width={30} height={30} />
-                    <p className="md:mngo-ml-2 mngo-ml-1 mngo-font-bold">{PROJECT_NAME}</p>
+                    <span className="md:mngo-ml-2 mngo-ml-1 mngo-font-bold">{PROJECT_NAME}</span>
                 </a>
             </p>
 
