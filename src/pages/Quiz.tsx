@@ -3,9 +3,10 @@ import { useParams } from 'react-router';
 import FullScreenLoader from "mngo-project-tools/comps/FullScreenLoader";
 import BottomModal from "mngo-project-tools/comps/BottomModal";
 import WithData from "mngo-project-tools/hocs/WithData";
-import { QuizHeader, Carousel, LinkDetector } from "../comps";
-import { API_BASE_URL, API_FILE_REF, QUIZ_JSON_FILE_LOCATION, QUIZ_JSON_FILE_NAME, MACHINE_CODING_FILE_LOCATION } from '../constants';
-import { shuffle } from '../utils';
+import LinkDetector from "mngo-project-tools/comps/LinkDetector";
+import { QuizHeader, Carousel } from "../comps";
+import { API_BASE_URL, API_FILE_REF, QUIZ_JSON_FILE_LOCATION, QUIZ_JSON_FILE_NAME, MACHINE_CODING_FILE_LOCATION, TYPE_SOLUTION, TYPE_SCRATCHPAD } from '../constants';
+import { shuffle, toSentenceCase } from '../utils';
 
 function OpenLinkInNewTab({
     htmlString = "",
@@ -37,9 +38,7 @@ function Quiz({
     const isMounted = useRef<boolean>(false);
     const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
     const [quizQuestions, setQuizQuestions] = useState<string[]>([]);
-
-    const [isSolutionVisible, setIsSolutionVisible] = useState<boolean>(false);
-    const [solution, setSolution] = useState<string>("");
+    const [modalData, setModalData] = useState<{ [key: string]: any }>({ isOpen: false, type: "", content: "" });
 
     useEffect(() => {
         const quizData = data?.[0] || {};
@@ -60,9 +59,12 @@ function Quiz({
         const currentQstnSolution = (currentQuiz?.[currentQstn] || []).join("");
 
         if (currentQstnSolution) {
-            setIsSolutionVisible(true);
-            setSolution(currentQstnSolution);
+            setModalData({ isOpen: true, type: TYPE_SOLUTION, content: currentQstnSolution });
         }
+    }
+
+    function handleScratchpadClick() {
+        setModalData({ isOpen: true, type: TYPE_SCRATCHPAD });
     }
 
     const question = quizQuestions?.[currentQuestionIdx] || "";
@@ -79,11 +81,11 @@ function Quiz({
                             disableLeft={currentQuestionIdx === 0}
                             disableRight={currentQuestionIdx === quizQuestions.length - 1}
                             onLeftClick={() => {
-                                setIsSolutionVisible(false);
+                                setModalData({ isOpen: false });
                                 setCurrentQuestionIdx(prev => prev - 1);
                             }}
                             onRightClick={() => {
-                                setIsSolutionVisible(false);
+                                setModalData({ isOpen: false });
                                 setCurrentQuestionIdx(prev => prev + 1);
                             }}
                         >
@@ -92,7 +94,7 @@ function Quiz({
                                     {
                                         (isMachineCodingQuestion) ? (
                                             <LinkDetector
-                                                linkRenderor={(word, link) => (<>
+                                                linkRenderor={(word: string, link: string) => (<>
                                                     (<a href={link} target="_blank" rel="noopener noreferrer">Demo</a>)
                                                     <iframe src={link} width={"100%"} height={"600px"} className="mngo-border-none"></iframe>
                                                 </>)}
@@ -112,6 +114,9 @@ function Quiz({
                                     >
                                         view solution
                                     </button>
+                                    <br />
+
+                                    <button className="mngo-cursor-pointer mngo-text-lg mngo-drop-shadow-lg mngo-text-white" onClick={handleScratchpadClick}>scratchpad</button>
                                 </div>
                             </div>
                         </Carousel>
@@ -123,11 +128,19 @@ function Quiz({
 
 
             {
-                (isSolutionVisible) ? (
-                    <BottomModal title="Solution" onCloseClick={() => setIsSolutionVisible(false)}>
-                        <div className="mngo-text-sm mngo-solution">
-                            <OpenLinkInNewTab htmlString={solution} />
-                        </div>
+                (modalData.isOpen) ? (
+                    <BottomModal title={toSentenceCase(modalData.type)} onCloseClick={() => setModalData({ isOpen: false })}>
+                        {
+                            (modalData.type === TYPE_SOLUTION) ? (
+                                <div className="mngo-text-sm mngo-solution">
+                                    <OpenLinkInNewTab htmlString={modalData.content} />
+                                </div>
+                            ) : (
+                                <section className="mngo-flex mngo-items-center mngo-flex-1 mngo-w-full">
+                                    <textarea className="mngo-flex-1 mngo-bg-slate-100 mngo-w-full mngo-h-full" />
+                                </section>
+                            )
+                        }
                     </BottomModal>
                 ) : null
             }

@@ -364,6 +364,11 @@ h1,
   border-style: none;
 }
 
+.mngo :is(.mngo-bg-slate-100) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
 .mngo :is(.mngo-bg-white) {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
