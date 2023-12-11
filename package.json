@@ -12,6 +12,7 @@
         "mngo-project-tools": "1.2.99",
         "react": "18.2.0",
         "react-dom": "18.2.0",
+        "react-image-annotate-mngo": "^0.8.72",
         "react-router-dom": "6.19.0"
     },
     "devDependencies": {

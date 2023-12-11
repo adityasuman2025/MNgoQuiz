@@ -2,7 +2,7 @@ import React from "react";
 import FullScreenLoader from "mngo-project-tools/comps/FullScreenLoader";
 import WithData from "mngo-project-tools/hocs/WithData";
 import getLogoImg from "mngo-project-tools/getLogoImg";
-import { API_BASE_URL, API_FILE_REF, PROJECT_NAME, QUIZ_JSON_FILE_LOCATION, QUIZ_JSON_FILE_NAME } from '../constants';
+import { API_BASE_URL, API_FILE_REF, PROJECT_NAME, QUIZ_JSON_FILE_LOCATION, QUIZ_JSON_FILE_NAME, QUIZ_DATA_KEY } from '../constants';
 import { QuizListItem } from '../comps';
 
 function Home({
@@ -44,7 +44,7 @@ function Home({
 }
 
 export default WithData(React.memo(Home), [{ url: `${API_BASE_URL}${API_FILE_REF}?location=${QUIZ_JSON_FILE_LOCATION}&fileName=${QUIZ_JSON_FILE_NAME}` }], {
-    storageDataKey: "quizData",
+    storageDataKey: QUIZ_DATA_KEY,
     loaderOrErrorRenderer: function (hasError: boolean, error: string) {
         return (
             <FullScreenLoader styles={{ loaderClassName: "mngo-loader" }}>

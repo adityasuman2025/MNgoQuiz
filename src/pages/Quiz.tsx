@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from 'react-router';
+import { MNgoImageAnnotate } from "react-image-annotate-mngo";
 import FullScreenLoader from "mngo-project-tools/comps/FullScreenLoader";
 import BottomModal from "mngo-project-tools/comps/BottomModal";
 import WithData from "mngo-project-tools/hocs/WithData";
 import LinkDetector from "mngo-project-tools/comps/LinkDetector";
+import { getCacheRegular, setCacheRegular } from "mngo-project-tools/cachingUtil";
 import { QuizHeader, Carousel } from "../comps";
-import { API_BASE_URL, API_FILE_REF, QUIZ_JSON_FILE_LOCATION, QUIZ_JSON_FILE_NAME, MACHINE_CODING_FILE_LOCATION, TYPE_SOLUTION, TYPE_SCRATCHPAD } from '../constants';
+import { API_BASE_URL, API_FILE_REF, QUIZ_JSON_FILE_LOCATION, QUIZ_JSON_FILE_NAME, MACHINE_CODING_FILE_LOCATION, TYPE_SOLUTION, TYPE_SCRATCHPAD, QUIZ_DATA_KEY, SCRATCHPAD_DATA_KEY } from '../constants';
 import { shuffle, toSentenceCase } from '../utils';
+import whiteBg from "../imgs/whiteBg.jpg";
 
 function OpenLinkInNewTab({
     htmlString = "",
@@ -28,6 +31,9 @@ function OpenLinkInNewTab({
     return <div dangerouslySetInnerHTML={{ __html: modifiedHtmlString }} />
 }
 
+let timerRef: any = null;
+const SCRATHCPAD_DATA = getCacheRegular(SCRATCHPAD_DATA_KEY, "{}");
+
 function Quiz({
     data = {},
 }: {
@@ -39,6 +45,18 @@ function Quiz({
     const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
     const [quizQuestions, setQuizQuestions] = useState<string[]>([]);
     const [modalData, setModalData] = useState<{ [key: string]: any }>({ isOpen: false, type: "", content: "" });
+
+    const [quizScratchpadData, setQuizScratchpadData] = useState<{ [key: string]: any }>(SCRATHCPAD_DATA[quizName] || {});
+
+    useEffect(() => {
+        if (Object.keys(quizScratchpadData).length) {
+            clearTimeout(timerRef);
+            timerRef = setTimeout(() => {
+                setCacheRegular(SCRATCHPAD_DATA_KEY, { ...SCRATHCPAD_DATA, [quizName]: quizScratchpadData });
+            }, 600);
+        }
+
+    }, [quizScratchpadData]);
 
     useEffect(() => {
         const quizData = data?.[0] || {};
@@ -136,8 +154,27 @@ function Quiz({
                                     <OpenLinkInNewTab htmlString={modalData.content} />
                                 </div>
                             ) : (
-                                <section className="mngo-flex mngo-items-center mngo-flex-1 mngo-w-full">
-                                    <textarea className="mngo-flex-1 mngo-bg-slate-100 mngo-w-full mngo-h-full" />
+                                <section className="mngo-flex mngo-items-start mngo-flex-1 mngo-w-full mngo-h-full">
+                                    <textarea
+                                        className="mngo-text-base mngo-flex-1 mngo-h-full mngo-border-none focus:mngo-outline-none mngo-resize-none"
+                                        placeholder="write here..."
+                                        value={quizScratchpadData?.text || ""}
+                                        onChange={e => {
+                                            setQuizScratchpadData({ ...quizScratchpadData, text: e.target.value || "" });
+                                        }}
+                                    />
+
+                                    <div className="lg:mngo-block mngo-hidden mngo-bg-black mngo-h-full mngo-overflow-hidden">
+                                        <MNgoImageAnnotate
+                                            compMaxHeight={"100%"}
+                                            image={whiteBg}
+                                            imgWidth={quizScratchpadData?.annotData?.imgWidth || window.innerWidth / 2 - 50}
+                                            annotations={quizScratchpadData?.annotData?.annotations || []}
+                                            onChange={(annots: { [key: string]: any }) => {
+                                                setQuizScratchpadData({ ...quizScratchpadData, annotData: annots || {} });
+                                            }}
+                                        />
+                                    </div>
                                 </section>
                             )
                         }
@@ -149,7 +186,7 @@ function Quiz({
 }
 
 export default WithData(React.memo(Quiz), [{ url: `${API_BASE_URL}${API_FILE_REF}?location=${QUIZ_JSON_FILE_LOCATION}&fileName=${QUIZ_JSON_FILE_NAME}` }], {
-    storageDataKey: "quizData",
+    storageDataKey: QUIZ_DATA_KEY,
     loaderOrErrorRenderer: function (hasError: boolean, error: string) {
         return (
             <FullScreenLoader styles={{ loaderClassName: "mngo-loader" }}>
