@@ -156,6 +156,7 @@ function Quiz({
                             ) : (
                                 <section className="mngo-flex mngo-items-start mngo-flex-1 mngo-w-full mngo-h-full">
                                     <textarea
+                                        autoFocus
                                         className="mngo-text-base mngo-flex-1 mngo-h-full mngo-border-none focus:mngo-outline-none mngo-resize-none"
                                         placeholder="write here..."
                                         value={quizScratchpadData?.text || ""}
