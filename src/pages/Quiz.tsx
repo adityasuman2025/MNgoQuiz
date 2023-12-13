@@ -165,7 +165,7 @@ function Quiz({
                                         }}
                                     />
 
-                                    <div className="lg:mngo-block mngo-hidden mngo-bg-black mngo-h-full mngo-overflow-hidden">
+                                    <div className="lg:mngo-block mngo-hidden mngo-h-full mngo-overflow-hidden">
                                         <MNgoImageAnnotate
                                             compMaxHeight={"100%"}
                                             image={whiteBg}
