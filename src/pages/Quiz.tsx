@@ -126,15 +126,14 @@ function Quiz({
                                 <div className="mngo-absolute mngo-left-0 mngo-bottom-2 mngo-w-full mngo-text-center">
                                     <p>{currentQuestionIdx + 1}/{quizQuestions.length}</p>
                                     <button
-                                        className="mngo-cursor-pointer mngo-text-lg mngo-drop-shadow-lg mngo-p-2 mngo-rounded-full mngo-transition mngo-duration-300 hover:mngo-scale-110"
-                                        style={{ color: "var(--burning_sky_light)" }}
+                                        className="mngo-cursor-pointer mngo-text-base mngo-drop-shadow-lg mngo-p-2 mngo-text-slate-300"
                                         onClick={handleSolutionClick}
                                     >
                                         view solution
                                     </button>
                                     <br />
 
-                                    <button className="mngo-cursor-pointer mngo-text-lg mngo-drop-shadow-lg mngo-text-white" onClick={handleScratchpadClick}>scratchpad</button>
+                                    <button className="mngo-cursor-pointer mngo-text-lg mngo-drop-shadow-lg mngo-p-2 mngo-text-white mngo-transition mngo-duration-300 hover:mngo-scale-110 " onClick={handleScratchpadClick}>scratchpad</button>
                                 </div>
                             </div>
                         </Carousel>

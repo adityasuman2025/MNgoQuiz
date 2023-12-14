@@ -29,10 +29,7 @@ export default function Timer() {
                 {isTimerRunning ? "Pause" : "Start"}
             </button>
 
-            <div
-                className='mngo-ml-6 mngo-flex mngo-items-center mngo-px-5 mngo-py-1.5 mngo-shadow-lg mngo-rounded-2xl'
-                style={{ background: "var(--burning_sky_dark)" }}
-            >
+            <div className='mngo-ml-6 mngo-flex mngo-items-center mngo-px-3 mngo-py-1.5'>
                 <img src={TimerIcon} className='mngo-quiz-icon' alt="timer icon" width={30} height={30} />
 
                 <div className='mngo-ml-1.5 mngo-text-white mngo-text-2xl mngo-font-bold'>
