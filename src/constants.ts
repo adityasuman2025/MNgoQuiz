@@ -21,3 +21,6 @@ export const LOGGED_USER_TOKEN_COOKIE_NAME = "MNgoQuizLoggedUserToken";
 export const STANDARD_DATE_FORMAT = "DD-MM-YYYY";
 export const DEFAULT_DATE = "1999-03-03T";
 export const ALLOWED_IMAGE_TYPES = ["image/png", "image/jpeg"];
+export const TYPE_SOLUTION = "solution", TYPE_SCRATCHPAD = "scratchpad";
+export const QUIZ_DATA_KEY = "quizData";
+export const SCRATCHPAD_DATA_KEY = "scratchpadData";
