@@ -1,6 +1,8 @@
-import { memo, Suspense, lazy } from "react";
+import { useEffect, memo, Suspense, lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import FullScreenLoader from "mngo-project-tools/comps/FullScreenLoader";
+import { sendRequestToAPI } from "mngo-project-tools/utils";
+import { API_BASE_URL, API_COUNTER_REF, PROJECT_NAME } from "./constants";
 
 //lazy loading split the main bundle into many chunks
 const Home = lazy(() => import('./pages/Home'));
@@ -9,6 +11,10 @@ const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
 function Routes() {
+    useEffect(() => {
+        sendRequestToAPI(API_BASE_URL, `${API_COUNTER_REF}?appName=${PROJECT_NAME.split(" ").join("")}&location=${encodeURI(window.location.href)}`)
+    }, []);
+
     const router = createBrowserRouter([
         {
             path: "/admin",

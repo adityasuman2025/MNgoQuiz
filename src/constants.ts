@@ -7,6 +7,7 @@ export const COOKIE_EXPIRATION_TIME = COOKIE_EXPIRATION_TYM;
 
 export const API_BASE_URL = "https://apis.mngo.in"; // "http://localhost:3000" //
 export const API_USERS_REF = "/api/users";
+export const API_COUNTER_REF = "/api/counter";
 export const API_UPLOAD_REF = "/api/upload";
 export const API_FILE_REF = "/api/get-file";
 
