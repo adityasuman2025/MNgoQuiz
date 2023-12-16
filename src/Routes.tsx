@@ -12,7 +12,7 @@ const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
 function Routes() {
     useEffect(() => {
-        sendRequestToAPI(API_BASE_URL, `${API_COUNTER_REF}?appName=${PROJECT_NAME.split(" ").join("")}&location=${encodeURI(window.location.href)}`)
+        sendRequestToAPI(API_BASE_URL, `${API_COUNTER_REF}`, "POST", { appName: PROJECT_NAME.split(" ").join(""), location: window.location.href });
     }, []);
 
     const router = createBrowserRouter([
