@@ -5,7 +5,7 @@ import FullScreenLoader from "mngo-project-tools/comps/FullScreenLoader";
 import BottomModal from "mngo-project-tools/comps/BottomModal";
 import WithData from "mngo-project-tools/hocs/WithData";
 import LinkDetector from "mngo-project-tools/comps/LinkDetector";
-import { getCacheRegular, setCacheRegular } from "mngo-project-tools/cachingUtil";
+import { getCacheRegular, setCacheRegular } from "mngo-project-tools/cachingUtils";
 import { QuizHeader, Carousel } from "../comps";
 import { API_BASE_URL, API_FILE_REF, QUIZ_JSON_FILE_LOCATION, QUIZ_JSON_FILE_NAME, MACHINE_CODING_FILE_LOCATION, TYPE_SOLUTION, TYPE_SCRATCHPAD, QUIZ_DATA_KEY, SCRATCHPAD_DATA_KEY } from '../constants';
 import { shuffle, toSentenceCase } from '../utils';
