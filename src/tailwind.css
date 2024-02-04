@@ -59,6 +59,10 @@
         background: rgba(255, 255, 255, 0.2);
     }
 
+    .mngo-transp-bckgrnd-1 {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
     .mngo-light-input {
         background: rgba(255, 255, 255, 0.4) !important;
         border: none !important;
@@ -84,11 +88,14 @@
     }
 
     .mngo-question a,
-    .mngo-question a:visited {
+    .mngo-question a:visited,
+    .mngo-solution-2 a,
+    .mngo-solution-2 a:visited {
         color: #d8d8d8;
     }
 
-    .mngo-solution ul {
+    .mngo-solution ul,
+    .mngo-solution-2 ul {
         margin-left: 30px;
     }
 

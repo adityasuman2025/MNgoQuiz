@@ -54,6 +54,10 @@ h1,
   background: rgba(255, 255, 255, 0.2);
 }
 
+.mngo-transp-bckgrnd-1 {
+  background: rgba(255, 255, 255, 0.05);
+}
+
 .mngo-light-input {
   background: rgba(255, 255, 255, 0.4) !important;
   border: none !important;
@@ -83,11 +87,14 @@ h1,
 }
 
 .mngo-question a,
-    .mngo-question a:visited {
+    .mngo-question a:visited,
+    .mngo-solution-2 a,
+    .mngo-solution-2 a:visited {
   color: #d8d8d8;
 }
 
-.mngo-solution ul {
+.mngo-solution ul,
+    .mngo-solution-2 ul {
   margin-left: 30px;
 }
 
@@ -236,6 +243,11 @@ h1,
   margin: auto;
 }
 
+.mngo :is(.mngo-mx-4) {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mngo :is(.mngo-mx-auto) {
   margin-left: auto;
   margin-right: auto;
@@ -248,6 +260,10 @@ h1,
 
 .mngo :is(.mngo-mb-1) {
   margin-bottom: 0.25rem;
+}
+
+.mngo :is(.mngo-mb-2) {
+  margin-bottom: 0.5rem;
 }
 
 .mngo :is(.mngo-ml-1) {
@@ -278,40 +294,20 @@ h1,
   margin-top: 2.5rem;
 }
 
-.mngo :is(.mngo-mt-4) {
-  margin-top: 1rem;
-}
-
-.mngo :is(.mngo-mt-6) {
-  margin-top: 1.5rem;
-}
-
-.mngo :is(.mngo-mt-16) {
-  margin-top: 4rem;
-}
-
-.mngo :is(.mngo-mt-20) {
-  margin-top: 5rem;
-}
-
-.mngo :is(.mngo-mt-28) {
-  margin-top: 7rem;
+.mngo :is(.mngo-mt-2) {
+  margin-top: 0.5rem;
 }
 
 .mngo :is(.mngo-mt-24) {
   margin-top: 6rem;
 }
 
-.mngo :is(.mngo-mt-2) {
-  margin-top: 0.5rem;
+.mngo :is(.mngo-mt-4) {
+  margin-top: 1rem;
 }
 
-.mngo :is(.mngo-mt-1) {
-  margin-top: 0.25rem;
-}
-
-.mngo :is(.mngo-mt-0) {
-  margin-top: 0px;
+.mngo :is(.mngo-mb-4) {
+  margin-bottom: 1rem;
 }
 
 .mngo :is(.mngo-flex) {
@@ -355,28 +351,8 @@ h1,
   width: 100%;
 }
 
-.mngo :is(.mngo-w-2\/12) {
-  width: 16.666667%;
-}
-
-.mngo :is(.mngo-w-8\/12) {
-  width: 66.666667%;
-}
-
-.mngo :is(.mngo-w-9\/12) {
-  width: 75%;
-}
-
-.mngo :is(.mngo-w-1\/2) {
-  width: 50%;
-}
-
 .mngo :is(.mngo-flex-1) {
   flex: 1 1 0%;
-}
-
-.mngo :is(.mngo-shrink) {
-  flex-shrink: 1;
 }
 
 .mngo :is(.mngo-cursor-pointer) {
@@ -427,38 +403,21 @@ h1,
   border-radius: 0.5rem;
 }
 
-.mngo :is(.mngo-border-none) {
-  border-style: none;
+.mngo :is(.mngo-rounded-sm) {
+  border-radius: 0.125rem;
 }
 
-.mngo :is(.mngo-bg-black) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+.mngo :is(.mngo-rounded) {
+  border-radius: 0.25rem;
+}
+
+.mngo :is(.mngo-border-none) {
+  border-style: none;
 }
 
 .mngo :is(.mngo-bg-white) {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.mngo :is(.mngo-bg-slate-100) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-
-.mngo :is(.mngo-bg-gray-900) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
-.mngo :is(.mngo-bg-red-100) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
-}
-
-.mngo :is(.mngo-bg-red-900) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
 }
 
 .mngo :is(.mngo-p-2) {
@@ -467,10 +426,6 @@ h1,
 
 .mngo :is(.mngo-p-3) {
   padding: 0.75rem;
-}
-
-.mngo :is(.mngo-p-6) {
-  padding: 1.5rem;
 }
 
 .mngo :is(.mngo-px-3) {
@@ -506,26 +461,6 @@ h1,
 .mngo :is(.mngo-py-4) {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.mngo :is(.mngo-pt-6) {
-  padding-top: 1.5rem;
-}
-
-.mngo :is(.mngo-pt-8) {
-  padding-top: 2rem;
-}
-
-.mngo :is(.mngo-pt-2) {
-  padding-top: 0.5rem;
-}
-
-.mngo :is(.mngo-pt-0) {
-  padding-top: 0px;
-}
-
-.mngo :is(.mngo-pt-24) {
-  padding-top: 6rem;
 }
 
 .mngo :is(.mngo-text-left) {
@@ -645,14 +580,6 @@ h1,
     margin-top: 7rem;
   }
 
-  .mngo :is(.md\:mngo-mt-2) {
-    margin-top: 0.5rem;
-  }
-
-  .mngo :is(.md\:mngo-mt-20) {
-    margin-top: 5rem;
-  }
-
   .mngo :is(.md\:mngo-block) {
     display: block;
   }
@@ -661,28 +588,24 @@ h1,
     width: 33.333333%;
   }
 
-  .mngo :is(.md\:mngo-w-9\/12) {
-    width: 75%;
-  }
-
   .mngo :is(.md\:mngo-w-3\/12) {
     width: 25%;
   }
 
-  .mngo :is(.md\:mngo-flex-1) {
-    flex: 1 1 0%;
+  .mngo :is(.md\:mngo-w-9\/12) {
+    width: 75%;
   }
 
   .mngo :is(.md\:mngo-flex-row) {
     flex-direction: row;
   }
 
-  .mngo :is(.md\:mngo-p-4) {
-    padding: 1rem;
+  .mngo :is(.md\:mngo-p-3) {
+    padding: 0.75rem;
   }
 
-  .mngo :is(.md\:mngo-pt-28) {
-    padding-top: 7rem;
+  .mngo :is(.md\:mngo-p-4) {
+    padding: 1rem;
   }
 
   .mngo :is(.md\:mngo-text-center) {
@@ -692,6 +615,11 @@ h1,
   .mngo :is(.md\:mngo-text-4xl) {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .mngo :is(.md\:mngo-text-base) {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .mngo :is(.md\:mngo-text-xl) {

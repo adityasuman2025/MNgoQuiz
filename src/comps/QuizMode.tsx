@@ -3,30 +3,10 @@ import { MNgoImageAnnotate } from "react-image-annotate-mngo";
 import BottomModal from "mngo-project-tools/comps/BottomModal";
 import LinkDetector from "mngo-project-tools/comps/LinkDetector";
 import { getCacheRegular, setCacheRegular } from "mngo-project-tools/cachingUtils";
-import { Carousel } from "../comps";
+import { Carousel, OpenLinkInNewTab } from "../comps";
 import { MACHINE_CODING_FILE_LOCATION, TYPE_SOLUTION, TYPE_SCRATCHPAD, SCRATCHPAD_DATA_KEY } from '../constants';
 import { shuffle, toSentenceCase } from '../utils';
 import whiteBg from "../imgs/whiteBg.jpg";
-
-function OpenLinkInNewTab({
-    htmlString = "",
-}: {
-    htmlString: string
-}) {
-    const [modifiedHtmlString, setModifiedHtmlString] = useState<string>("");
-
-    useEffect(() => {
-        const dummyEle = document.createElement('div');
-        dummyEle.innerHTML = htmlString;
-
-        const allLinksInsideContent = dummyEle.querySelectorAll('a');
-        allLinksInsideContent.forEach((link) => link.setAttribute('target', '_blank'));
-
-        setModifiedHtmlString(dummyEle.innerHTML);
-    }, [htmlString]);
-
-    return <div dangerouslySetInnerHTML={{ __html: modifiedHtmlString }} />
-}
 
 let timerRef: any = null;
 const SCRATHCPAD_DATA = getCacheRegular(SCRATCHPAD_DATA_KEY, "{}");
