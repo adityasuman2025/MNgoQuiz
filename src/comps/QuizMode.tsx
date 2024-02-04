@@ -38,7 +38,6 @@ function QuizMode({
     quizName: string;
     currentQuizData: { [key: string]: any };
 }) {
-
     const [quizQuestions, setQuizQuestions] = useState<string[]>([]);
     const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
     const [modalData, setModalData] = useState<{ [key: string]: any }>({ isOpen: false, type: "", content: "" });
@@ -109,7 +108,7 @@ function QuizMode({
                     <div className="mngo-absolute mngo-left-0 mngo-bottom-2 mngo-w-full mngo-text-center">
                         <p>{currentQuestionIdx + 1}/{quizQuestions.length}</p>
                         <button
-                            className="mngo-cursor-pointer mngo-text-base mngo-drop-shadow-lg mngo-p-2 mngo-text-slate-300"
+                            className="mngo-cursor-pointer mngo-text-base mngo-drop-shadow-lg mngo-p-2 mngo-text-slate-300 mngo-text-secndry-2"
                             onClick={handleSolutionClick}
                         >
                             view solution

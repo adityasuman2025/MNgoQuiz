@@ -4,10 +4,10 @@
 
 @layer base {
     :root {
-        --neon_passion_light: #d4224f;
-        --neon_passion_dark: #91186b;
-        --burning_sky_light: #d04701;
-        --burning_sky_dark: #a40b0b;
+        --primary_1: #AC3B61;
+        --primary_2: #DA7B93;
+        --secondary_1: #d04701;
+        --secondary_2: #78244C;
     }
 
     body {
@@ -18,7 +18,7 @@
             sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background: linear-gradient(120deg, var(--neon_passion_light), var(--neon_passion_dark)) !important;
+        background: linear-gradient(120deg, var(--primary_1), var(--primary_2)) !important;
         color: #d8d8d8;
     }
 
@@ -43,7 +43,8 @@
     li,
     figure,
     figCaption,
-    section {
+    section,
+    aside {
         margin: 0;
         padding: 0;
         border: none;
@@ -51,10 +52,10 @@
     }
 
     .mngo-quiz-background {
-        background: linear-gradient(120deg, var(--neon_passion_light), var(--neon_passion_dark)) !important;
+        background: linear-gradient(120deg, var(--primary_1), var(--primary_2)) !important;
     }
 
-    .mngo-bckgrnd-1 {
+    .mngo-transp-bckgrnd {
         background: rgba(255, 255, 255, 0.2);
     }
 
@@ -67,8 +68,12 @@
         color: #d8d8d8 !important;
     }
 
+    .mngo-text-secndry-2 {
+        color: var(--secondary_2) !important;
+    }
+
     .mngo-loader {
-        border-color: #d8d8d8 var(--burning_sky_dark) #d8d8d8;
+        border-color: #d8d8d8 var(--secondary_2) #d8d8d8;
     }
 
     .mngo-quiz-icon {

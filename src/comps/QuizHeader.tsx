@@ -12,9 +12,7 @@ export default function QuizHeader({
     onSwitchMode?: () => void;
 }) {
     return (
-        <header
-            className="mngo-fixed mngo-top-0 mngo-w-full mngo-text-center mngo-z-10"
-        >
+        <header className="mngo-fixed mngo-top-0 mngo-w-full mngo-text-center mngo-z-10">
             <div className="mngo-quiz-background mngo-flex mngo-items-center mngo-justify-between mngo-py-2.5 mngo-drop-shadow-lg">
                 <p className="mngo-w-1/3 mngo-ml-3">
                     <a href="/" className="mngo-flex mngo-items-center mngo-no-underline mngo-w-fit mngo-text-white">
@@ -29,9 +27,9 @@ export default function QuizHeader({
                     <Timer />
                 </div>
             </div>
-            <button className="mngo-bckgrnd-1 mngo-w-full mngo-py-2 mngo-text-white mngo-cursor-pointer" onClick={onSwitchMode}>
+            <button className="mngo-transp-bckgrnd mngo-w-full mngo-py-2 mngo-text-white mngo-cursor-pointer" onClick={onSwitchMode}>
                 switch to {appMode === APP_MODE_QUIZ ? APP_MODE_LEARN : APP_MODE_QUIZ} mode
             </button>
-        </header>
+        </header >
     )
 }

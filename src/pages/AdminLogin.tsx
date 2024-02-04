@@ -34,7 +34,7 @@ function AdminLogin() {
     return (
         <section className='mngo-h-screen mngo-flex mngo-items-center mngo-justify-center'>
             <LoginForm
-                styles={{ inputClassName: "mngo-light-input" }}
+                styles={{ inputClassName: "mngo-light-input mngo-text-secndry-2" }}
                 projectTitle={PROJECT_NAME}
                 isLoggingUser={showLoader}
                 showError={(error: string) => { makeSnackBar(error) }}

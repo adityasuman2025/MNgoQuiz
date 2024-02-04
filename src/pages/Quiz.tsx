@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import FullScreenLoader from "mngo-project-tools/comps/FullScreenLoader";
 import WithData from "mngo-project-tools/hocs/WithData";
 import { getCacheRegular, setCacheRegular } from "mngo-project-tools/cachingUtils";
-import { QuizHeader, QuizMode } from "../comps";
+import { QuizHeader, LearnMode, QuizMode } from "../comps";
 import { API_BASE_URL, API_FILE_REF, QUIZ_JSON_FILE_LOCATION, QUIZ_JSON_FILE_NAME, QUIZ_DATA_KEY, APP_MODE_KEY, APP_MODES, APP_MODE_LEARN, APP_MODE_QUIZ } from '../constants';
 
 const APP_MODE_CACHE: any = getCacheRegular(APP_MODE_KEY);
@@ -48,7 +48,7 @@ function Quiz({
                             appMode === APP_MODES[APP_MODE_QUIZ] ? (
                                 <QuizMode quizName={quizName} currentQuizData={currentQuizData} />
                             ) : (
-                                <p className="mngo-mt-10 mngo-text-2xl">Learn Mode</p>
+                                <LearnMode quizName={quizName} currentQuizData={currentQuizData} />
                             )
                         }
                     </>
