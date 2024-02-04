@@ -11,7 +11,7 @@ export default function QuizListItem({
 }) {
     return (
         <li
-            className='mngo-quiz-card mngo-flex mngo-justify-between mngo-items-center md:mngo-p-4 mngo-p-3 mngo-rounded-lg mngo-mb-1 mngo-cursor-pointer mngo-list-none'
+            className='mngo-bckgrnd-1 mngo-flex mngo-justify-between mngo-items-center md:mngo-p-4 mngo-p-3 mngo-rounded-lg mngo-mb-1 mngo-cursor-pointer mngo-list-none'
             onClick={onClick}
         >
             <figure>

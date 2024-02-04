@@ -25,3 +25,13 @@ export const ALLOWED_IMAGE_TYPES = ["image/png", "image/jpeg"];
 export const TYPE_SOLUTION = "solution", TYPE_SCRATCHPAD = "scratchpad";
 export const QUIZ_DATA_KEY = "quizData";
 export const SCRATCHPAD_DATA_KEY = "scratchpadData";
+
+
+// App modes
+export const APP_MODE_KEY = "appMode";
+export const APP_MODE_LEARN = "LEARN";
+export const APP_MODE_QUIZ = "QUIZ";
+export enum APP_MODES {
+    LEARN = APP_MODE_LEARN,
+    QUIZ = APP_MODE_QUIZ,
+}
