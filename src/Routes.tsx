@@ -11,7 +11,7 @@ const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
 function Routes() {
     useEffect(() => {
-        // appCounter();
+        appCounter();
     }, []);
 
     const router = createBrowserRouter([
