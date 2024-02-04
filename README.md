@@ -18,6 +18,7 @@ A web application designed for practicing common and well-known interview questi
 
 <img src="screenshots/4.png" alt="screenshot 4">
 
+<img src="screenshots/5.png" alt="screenshot 5">
 
 ## License
 
